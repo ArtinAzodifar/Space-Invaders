@@ -10,10 +10,14 @@ public class PlayerController : MonoBehaviour
     {
         movingInput = context.ReadValue<Vector2>();
     }
-    
+
     public void Update()
     {
         Vector2 move = new Vector2(movingInput.x, 0) * speed * Time.deltaTime;
         transform.Translate(move);
+    }
+    public void OollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("detected!");
     }
 }
