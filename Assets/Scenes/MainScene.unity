@@ -129,7 +129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2484228338914545667, guid: fa98a7891da6b4d47bdb0c8778b4132a, type: 3}
       propertyPath: m_Name
-      value: Shield (1)
+      value: Shield
       objectReference: {fileID: 0}
     - target: {fileID: 7873499934866158686, guid: fa98a7891da6b4d47bdb0c8778b4132a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -186,7 +186,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2484228338914545667, guid: fa98a7891da6b4d47bdb0c8778b4132a, type: 3}
       propertyPath: m_Name
-      value: Shield (3)
+      value: Shield
       objectReference: {fileID: 0}
     - target: {fileID: 7873499934866158686, guid: fa98a7891da6b4d47bdb0c8778b4132a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -662,7 +662,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2484228338914545667, guid: fa98a7891da6b4d47bdb0c8778b4132a, type: 3}
       propertyPath: m_Name
-      value: Shield (2)
+      value: Shield
       objectReference: {fileID: 0}
     - target: {fileID: 7873499934866158686, guid: fa98a7891da6b4d47bdb0c8778b4132a, type: 3}
       propertyPath: m_LocalPosition.x
