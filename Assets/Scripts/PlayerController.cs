@@ -16,8 +16,4 @@ public class PlayerController : MonoBehaviour
         Vector2 move = new Vector2(movingInput.x, 0) * speed * Time.deltaTime;
         transform.Translate(move);
     }
-    public void OollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("detected!");
-    }
 }
