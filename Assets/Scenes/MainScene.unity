@@ -533,6 +533,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  maxX: 4.9
+  minX: -4.9
   movingInput: {x: 0, y: 0}
 --- !u!212 &1116419942
 SpriteRenderer:
