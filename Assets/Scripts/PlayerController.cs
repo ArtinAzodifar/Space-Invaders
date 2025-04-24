@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float maxX = 4.9f;
     [SerializeField] private float minX = -4.9f;
     public int health = 3;
+    private Manager manager = Manager.getInstance();
 
     public Vector2 movingInput;
 
@@ -18,7 +19,6 @@ public class PlayerController : MonoBehaviour
 
     public void OnShoot(InputAction.CallbackContext context)
     {
-        Manager manager = Manager.getInstance();
         if (context.performed)
         {
             if (!manager.getIsPlayerLaserActive())

@@ -8,7 +8,7 @@ public class InvaderGrid : MonoBehaviour
     [SerializeField] private GameObject laser;
     [SerializeField] private int rows = 5;
     [SerializeField] private int cols = 6;
-    [SerializeField] private float invaderXSpeed = 1f;
+    [SerializeField] private float invaderXSpeed = 0.6f;
     [SerializeField] private float InvaderYSpeed = -1.5f;
     [SerializeField] private float maxX = 2f;
     [SerializeField] private float minX = -2f;
@@ -18,6 +18,7 @@ public class InvaderGrid : MonoBehaviour
     private float downTime = 0;
     private float shootTime;
     private float estimatedShootTime = 0;
+    private Manager manager = Manager.getInstance();
 
     private void Awake()
     {
@@ -25,9 +26,9 @@ public class InvaderGrid : MonoBehaviour
         float xChange = 1.1f;
         float y = 2.6f;
         float yChange = 0.8f;
-        for (int i = 0; i < this.rows; i++)
+        for (int i = 0; i < rows; i++)
         {
-            for (int j = 0; j < this.cols; j++)
+            for (int j = 0; j < cols; j++)
             {
                 invaders[invaderCount++] = Instantiate(prefabs[i], new Vector3(x, y, 0), transform.rotation, transform);
                 x += xChange;
@@ -79,7 +80,6 @@ public class InvaderGrid : MonoBehaviour
         if (estimatedShootTime >= shootTime)
         {
             estimatedShootTime = 0;
-            Manager manager = Manager.getInstance();
             manager.setInvaderLaserActive(true);
             Shoot();
             setShootTime();

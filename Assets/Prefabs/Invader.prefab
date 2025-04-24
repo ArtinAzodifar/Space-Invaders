@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 847551453310804136}
   - component: {fileID: 84197457850208370}
   - component: {fileID: 8980369723984264747}
+  - component: {fileID: -1760622056804629316}
   m_Layer: 0
   m_Name: Invader
   m_TagString: Invader
@@ -175,3 +176,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b60eb083143c99448d17f3dacd27114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+--- !u!95 &-1760622056804629316
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422150667677614309}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5969d5151ed5d4140a200d94fa5c1116, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
