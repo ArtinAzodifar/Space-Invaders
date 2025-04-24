@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 3
   tags:
   - side
+  - shield
+  - Invader
+  - invader1
+  - invader2
+  - invader3
+  - mysteryInvader
   layers:
   - Default
   - TransparentFX
