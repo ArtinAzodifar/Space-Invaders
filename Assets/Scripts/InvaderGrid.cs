@@ -1,3 +1,4 @@
+using System;
 using System.Data;
 using UnityEditor;
 using UnityEngine;
@@ -91,7 +92,7 @@ public class InvaderGrid : MonoBehaviour
         int invaderIndicator;
         while (true)
         {
-            invaderIndicator = Random.Range(0, 30);
+            invaderIndicator = UnityEngine.Random.Range(0, 30);
             if (invaders[invaderIndicator] != null)
             {
                 break;
@@ -103,6 +104,12 @@ public class InvaderGrid : MonoBehaviour
 
     private void setShootTime()
     {
-        shootTime = Random.Range(0f, 5f);
+        shootTime = UnityEngine.Random.Range(0f, 5f);
+    }
+
+    public void editSpeed()
+    {
+        invaderXSpeed *= 1 + Math.Abs(1 - ((float)invaderCount / (float)30));
+        invaderXSpeed = Math.Abs(invaderXSpeed) >= 2 ? 2.5f : invaderXSpeed;
     }
 }
