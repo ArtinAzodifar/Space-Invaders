@@ -14,6 +14,8 @@ public class Manager
         }
         return instance;
     }
+
+    //getters:
     public bool getIsPlayerLaserActive()
     {
         return isPlayerLaserActive;
@@ -22,6 +24,8 @@ public class Manager
     {
         return isInvaderLaserActive;
     }
+
+    //setters:
     public void setPlayerLaserActive(bool b)
     {
         isPlayerLaserActive = b;

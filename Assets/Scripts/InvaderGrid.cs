@@ -5,6 +5,7 @@ using UnityEngine;
 public class InvaderGrid : MonoBehaviour
 {
     [SerializeField] private GameObject[] prefabs;
+    [SerializeField] private GameObject laser;
     [SerializeField] private int rows = 5;
     [SerializeField] private int cols = 6;
     [SerializeField] private float invaderXSpeed = 1f;
@@ -15,6 +16,8 @@ public class InvaderGrid : MonoBehaviour
     public static int invaderCount = 0;
     private bool goDown = false;
     private float downTime = 0;
+    private float shootTime;
+    private float estimatedShootTime = 0;
 
     private void Awake()
     {
@@ -35,7 +38,18 @@ public class InvaderGrid : MonoBehaviour
         Debug.Log(invaderCount);
     }
 
+    private void Start()
+    {
+        setShootTime();
+    }
+
     private void Update()
+    {
+        Move();
+        ShootManage();
+    }
+
+    private void Move()
     {
         if (goDown)
         {
@@ -57,5 +71,38 @@ public class InvaderGrid : MonoBehaviour
         }
         Vector3 move = new Vector3(invaderXSpeed, 0, 0) * Time.deltaTime;
         transform.position += move;
+    }
+
+    private void ShootManage()
+    {
+        estimatedShootTime += Time.deltaTime;
+        if (estimatedShootTime >= shootTime)
+        {
+            estimatedShootTime = 0;
+            Manager manager = Manager.getInstance();
+            manager.setInvaderLaserActive(true);
+            Shoot();
+            setShootTime();
+        }
+    }
+
+    private void Shoot()
+    {
+        int invaderIndicator;
+        while (true)
+        {
+            invaderIndicator = Random.Range(0, 30);
+            if (invaders[invaderIndicator] != null)
+            {
+                break;
+            }
+        }
+        Vector3 position = new Vector3(invaders[invaderIndicator].transform.position.x, invaders[invaderIndicator].transform.position.y - 0.1f, 0);
+        Instantiate(laser, position, transform.rotation);
+    }
+
+    private void setShootTime()
+    {
+        shootTime = Random.Range(0f, 5f);
     }
 }

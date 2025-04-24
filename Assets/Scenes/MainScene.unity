@@ -1002,6 +1002,7 @@ MonoBehaviour:
   - {fileID: 8747896390183198274, guid: 1ed8b72352ce0074a9a40e55500fca3f, type: 3}
   - {fileID: 1660585482374409333, guid: 95501968481306947b334590787eb535, type: 3}
   - {fileID: 1660585482374409333, guid: 95501968481306947b334590787eb535, type: 3}
+  laser: {fileID: 6957706758242862667, guid: a938a4e6c3bff934ab6de551acd3d447, type: 3}
   rows: 5
   cols: 6
   invaderXSpeed: 1
