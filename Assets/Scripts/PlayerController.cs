@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private float maxX = 4.9f;
     [SerializeField] private float minX = -4.9f;
+    public static bool laserIsActive = false;
     public int health = 3;
 
     public Vector2 movingInput;
@@ -21,8 +22,12 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            Vector3 position = new Vector3(transform.position.x, transform.position.y + 0.1f, 0);
-            Instantiate(laser, position, transform.rotation);
+            if (!laserIsActive)
+            {
+                Vector3 position = new Vector3(transform.position.x, transform.position.y + 0.1f, 0);
+                Instantiate(laser, position, transform.rotation);
+                laserIsActive = true;
+            }
         }
     }
 

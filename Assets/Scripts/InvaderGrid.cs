@@ -12,7 +12,7 @@ public class InvaderGrid : MonoBehaviour
     [SerializeField] private float maxX = 2f;
     [SerializeField] private float minX = -2f;
     private GameObject[] invaders = new GameObject[30];
-    private int invaderCount = 0;
+    public static int invaderCount = 0;
     private bool goDown = false;
     private float downTime = 0;
 
@@ -32,6 +32,7 @@ public class InvaderGrid : MonoBehaviour
             x = -2.8f;
             y -= yChange;
         }
+        Debug.Log(invaderCount);
     }
 
     private void Update()
