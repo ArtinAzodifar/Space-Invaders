@@ -11,9 +11,10 @@ public class PlayerLaser : MonoBehaviour, Laser
 
     public void OnTriggerEnter2D(Collider2D other)
     {
+        Manager manager = Manager.getInstance();
         if (other.CompareTag("side") || other.CompareTag("shield") || other.CompareTag("invader1") || other.CompareTag("invader2") || other.CompareTag("invader3") || other.CompareTag("mysteryInvader"))
         {
-            PlayerController.laserIsActive = false;
+            manager.setPlayerLaserActive(false);
             Destroy(gameObject);
         }
     }

@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private float maxX = 4.9f;
     [SerializeField] private float minX = -4.9f;
-    public static bool laserIsActive = false;
     public int health = 3;
 
     public Vector2 movingInput;
@@ -20,13 +19,14 @@ public class PlayerController : MonoBehaviour
 
     public void OnShoot(InputAction.CallbackContext context)
     {
+        Manager manager = Manager.getInstance();
         if (context.performed)
         {
-            if (!laserIsActive)
+            if (!manager.getIsPlayerLaserActive())
             {
                 Vector3 position = new Vector3(transform.position.x, transform.position.y + 0.1f, 0);
                 Instantiate(laser, position, transform.rotation);
-                laserIsActive = true;
+                manager.setPlayerLaserActive(true);
             }
         }
     }
