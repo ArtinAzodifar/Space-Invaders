@@ -3,9 +3,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] float speed = 5f;
-    [SerializeField] float maxX = 4.9f;
-    [SerializeField] float minX = -4.9f;
+    [SerializeField] private float speed = 5f;
+    [SerializeField] private float maxX = 4.9f;
+    [SerializeField] private float minX = -4.9f;
 
     public Vector2 movingInput;
 

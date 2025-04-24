@@ -902,7 +902,7 @@ MonoBehaviour:
   - {fileID: 1660585482374409333, guid: 95501968481306947b334590787eb535, type: 3}
   rows: 5
   cols: 6
-  invaderXSpeed: 1.5
+  invaderXSpeed: 1
   InvaderYSpeed: -1.5
   maxX: 2
   minX: -2
