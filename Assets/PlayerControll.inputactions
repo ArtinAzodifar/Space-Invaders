@@ -2,7 +2,7 @@
     "name": "PlayerControll",
     "maps": [
         {
-            "name": "move",
+            "name": "control",
             "id": "ce599d27-0501-4033-9b07-6130942daf0e",
             "actions": [
                 {
@@ -13,6 +13,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "shoot",
+                    "type": "Button",
+                    "id": "ce5acf1b-79e5-43ee-9cbb-035cbd0be88e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -48,6 +57,17 @@
                     "action": "move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "d420aefd-2160-47c7-a5f4-24267c61fd80",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

@@ -11,6 +11,8 @@ TagManager:
   - invader2
   - invader3
   - mysteryInvader
+  - playerLaser
+  - invaderLaser
   layers:
   - Default
   - TransparentFX

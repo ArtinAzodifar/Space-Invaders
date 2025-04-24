@@ -1,17 +1,29 @@
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private GameObject laser;
     [SerializeField] private float speed = 5f;
     [SerializeField] private float maxX = 4.9f;
     [SerializeField] private float minX = -4.9f;
+    public int health = 3;
 
     public Vector2 movingInput;
 
     public void OnMove(InputAction.CallbackContext context)
     {
         movingInput = context.ReadValue<Vector2>();
+    }
+
+    public void OnShoot(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Vector3 position = new Vector3(transform.position.x, transform.position.y + 0.1f, 0);
+            Instantiate(laser, position, transform.rotation);
+        }
     }
 
     public void Update()
