@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float maxX = 4.9f;
     [SerializeField] private float minX = -4.9f;
     private int health = 3;
+    private bool isDead = false;
     private Manager manager = Manager.getInstance();
 
     private Vector2 movingInput;
@@ -33,9 +34,10 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (health == 0)
+        if (health <= 0 && !isDead)
         {
             Explode();
+            isDead = true;
         }
         Vector2 move = new Vector2(movingInput.x, 0) * speed * Time.deltaTime;
         move.x = Mathf.Clamp(move.x + transform.position.x, minX, maxX);
@@ -47,7 +49,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("invaderLaser"))
         {
             Damage();
-            
+
             Debug.Log(health);
         }
         if (other.CompareTag("invader1") || other.CompareTag("invader2") || other.CompareTag("invader3"))
@@ -69,18 +71,30 @@ public class PlayerController : MonoBehaviour
             case 1:
                 hearts[0].GetComponent<Heart>().Delete();
                 break;
-            case 0:
-                hearts[2].GetComponent<Heart>().Delete();
-                hearts[1].GetComponent<Heart>().Delete();
-                hearts[0].GetComponent<Heart>().Delete();
-                break;
         }
+        Explode();
         health--;
     }
 
     private void Explode()
     {
-        
-        manager.loose();
+        PlayerInput playerInput = GetComponent<PlayerInput>();
+        playerInput.enabled = false;
+        Animator animator = GetComponent<Animator>();
+        animator.SetTrigger("Explode");
+    }
+
+    public void Loose()
+    {
+        if (health <= 0)
+        {
+            manager.loose();
+        }
+        else
+        {
+            PlayerInput playerInput = GetComponent<PlayerInput>();
+            playerInput.enabled = true;
+        }
+
     }
 }
