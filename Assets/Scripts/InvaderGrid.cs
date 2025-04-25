@@ -11,8 +11,8 @@ public class InvaderGrid : MonoBehaviour
     [SerializeField] private int cols = 6;
     [SerializeField] private float invaderXSpeed = 0.6f;
     [SerializeField] private float InvaderYSpeed = -1.5f;
-    [SerializeField] private float maxX = 2f;
-    [SerializeField] private float minX = -2f;
+    [SerializeField] private float maxX = 4.5f;
+    [SerializeField] private float minX = -4.5f;
     private GameObject[] invaders = new GameObject[30];
     public static int invaderCount = 0;
     private bool goDown = false;
@@ -64,16 +64,26 @@ public class InvaderGrid : MonoBehaviour
             transform.position += moveDown;
             if (downTime >= 0.15)
             {
+                Vector3 moveFromSide = new Vector3(invaderXSpeed, 0, 0) * Time.deltaTime;
+                transform.position += moveFromSide;
                 goDown = false;
                 downTime = 0;
                 return;
             }
             return;
         }
-        if (transform.position.x >= maxX || transform.position.x <= minX)
+        foreach(GameObject invader in invaders)
         {
-            invaderXSpeed *= -1;
-            goDown = true;
+            if(invader == null)
+            {
+                continue;
+            }
+            if(invader.transform.position.x >= maxX || invader.transform.position.x <= minX)
+            {
+                invaderXSpeed *= -1;
+                goDown = true;
+                break;
+            }
         }
         Vector3 move = new Vector3(invaderXSpeed, 0, 0) * Time.deltaTime;
         transform.position += move;

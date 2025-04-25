@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
     {
         if (health == 0)
         {
-            manager.loose();
+            Explode();
         }
         Vector2 move = new Vector2(movingInput.x, 0) * speed * Time.deltaTime;
         move.x = Mathf.Clamp(move.x + transform.position.x, minX, maxX);
@@ -69,7 +69,18 @@ public class PlayerController : MonoBehaviour
             case 1:
                 hearts[0].GetComponent<Heart>().Delete();
                 break;
+            case 0:
+                hearts[2].GetComponent<Heart>().Delete();
+                hearts[1].GetComponent<Heart>().Delete();
+                hearts[0].GetComponent<Heart>().Delete();
+                break;
         }
         health--;
+    }
+
+    private void Explode()
+    {
+        
+        manager.loose();
     }
 }
