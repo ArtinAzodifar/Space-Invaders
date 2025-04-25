@@ -2,17 +2,38 @@ using UnityEngine;
 
 public class Invader : MonoBehaviour
 {
-    [SerializeField] Animator animator;
+    [SerializeField] private Animator animator;
     private InvaderGrid grid;
-    void Awake()
+    private Manager manager = Manager.getInstance();
+    private bool isDead = false;
+    private void Awake()
     {
         animator = GetComponent<Animator>();
         grid = FindAnyObjectByType<InvaderGrid>();
     }
-    void OnTriggerEnter2D(Collider2D other)
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        if(isDead)
+        {
+            return;
+        }
         if (other.CompareTag("playerLaser"))
         {
+            isDead = true;
+            switch (this.gameObject.tag)
+            {
+                case "invader1":
+                    manager.addScore(10);
+                    break;
+                case "invader2":
+                    manager.addScore(20);
+                    break;
+                case "invader3":
+                    manager.addScore(30);
+                    break;
+            }
+            Debug.Log(manager.getScore());
             InvaderGrid.invaderCount--;
             grid.editSpeed();
             Debug.Log(InvaderGrid.invaderCount);

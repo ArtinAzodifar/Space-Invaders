@@ -4,13 +4,14 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private GameObject laser;
+    [SerializeField] private GameObject[] hearts;
     [SerializeField] private float speed = 5f;
     [SerializeField] private float maxX = 4.9f;
     [SerializeField] private float minX = -4.9f;
-    public int health = 3;
+    private int health = 3;
     private Manager manager = Manager.getInstance();
 
-    public Vector2 movingInput;
+    private Vector2 movingInput;
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -30,10 +31,45 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Update()
+    private void Update()
     {
+        if (health == 0)
+        {
+            manager.loose();
+        }
         Vector2 move = new Vector2(movingInput.x, 0) * speed * Time.deltaTime;
         move.x = Mathf.Clamp(move.x + transform.position.x, minX, maxX);
         transform.position = new Vector3(move.x, transform.position.y, transform.position.z);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("invaderLaser"))
+        {
+            Damage();
+            
+            Debug.Log(health);
+        }
+        if (other.CompareTag("invader1") || other.CompareTag("invader2") || other.CompareTag("invader3"))
+        {
+            health = 0;
+        }
+    }
+
+    private void Damage()
+    {
+        switch (health)
+        {
+            case 3:
+                hearts[2].GetComponent<Heart>().Delete();
+                break;
+            case 2:
+                hearts[1].GetComponent<Heart>().Delete();
+                break;
+            case 1:
+                hearts[0].GetComponent<Heart>().Delete();
+                break;
+        }
+        health--;
     }
 }

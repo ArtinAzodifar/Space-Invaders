@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: f75895aad2449b442bb67c57b16a79f9
+guid: 671d4ab9354f3ec46b37fafa053f6cb5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1491285489860683338
-    second: 16x16 Heart Health Red_0
-  - first:
-      213: -1551189023202662216
-    second: 16x16 Heart Health Red_1
-  - first:
-      213: 7110130089200399995
-    second: 16x16 Heart Health Red_2
+      213: -205270267638800340
+    second: heart_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -57,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -78,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -119,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 16x16 Heart Health Red_0
+      name: heart_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 2
-        width: 15
-        height: 13
+        x: 22
+        y: 26
+        width: 23
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,52 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a4627d9704c12b410800000000000000
-      internalID: 1491285489860683338
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 16x16 Heart Health Red_1
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 2
-        width: 15
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8b8258c4dc1197ae0800000000000000
-      internalID: -1551189023202662216
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 16x16 Heart Health Red_2
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 2
-        width: 15
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b763b9125a14ca260800000000000000
-      internalID: 7110130089200399995
+      spriteID: c20a07677cbb62df0800000000000000
+      internalID: -205270267638800340
       vertices: []
       indices: 
       edges: []
@@ -198,9 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      16x16 Heart Health Red_0: 1491285489860683338
-      16x16 Heart Health Red_1: -1551189023202662216
-      16x16 Heart Health Red_2: 7110130089200399995
+      heart_0: -205270267638800340
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,8 +1,12 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public class Manager
 {
     private static Manager instance;
     private bool isPlayerLaserActive = false;
     private bool isInvaderLaserActive = false;
+    private int score = 0;
 
     private Manager() { }
 
@@ -15,6 +19,16 @@ public class Manager
         return instance;
     }
 
+    public void win()
+    {
+        SceneManager.LoadScene("WinScene");
+    }
+
+    public void loose()
+    {
+        SceneManager.LoadScene("LooseScene");
+    }
+
     //getters:
     public bool getIsPlayerLaserActive()
     {
@@ -23,6 +37,10 @@ public class Manager
     public bool getIsInvaderLaserActive()
     {
         return isInvaderLaserActive;
+    }
+    public int getScore()
+    {
+        return score;
     }
 
     //setters:
@@ -33,5 +51,9 @@ public class Manager
     public void setInvaderLaserActive(bool b)
     {
         isInvaderLaserActive = b;
+    }
+    public void addScore(int score)
+    {
+        this.score += score;
     }
 }

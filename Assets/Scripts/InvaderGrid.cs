@@ -47,6 +47,10 @@ public class InvaderGrid : MonoBehaviour
 
     private void Update()
     {
+        if (invaderCount <= 0)
+        {
+            manager.win();
+        }
         Move();
         ShootManage();
     }
@@ -89,6 +93,10 @@ public class InvaderGrid : MonoBehaviour
 
     private void Shoot()
     {
+        if (invaderCount == 0)
+        {
+            return;
+        }
         int invaderIndicator;
         while (true)
         {
@@ -110,6 +118,6 @@ public class InvaderGrid : MonoBehaviour
     public void editSpeed()
     {
         invaderXSpeed *= 1 + Math.Abs(1 - ((float)invaderCount / (float)30));
-        invaderXSpeed = Math.Abs(invaderXSpeed) >= 2 ? 2.5f : invaderXSpeed;
+        invaderXSpeed = Math.Abs(invaderXSpeed) >= 1.2 ? 1.2f : invaderXSpeed;
     }
 }
