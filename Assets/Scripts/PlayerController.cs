@@ -14,6 +14,11 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 movingInput;
 
+    public void Awake()
+    {
+        manager.setScore(0);
+    }
+
     public void OnMove(InputAction.CallbackContext context)
     {
         movingInput = context.ReadValue<Vector2>();

@@ -23,6 +23,7 @@ public class InvaderGrid : MonoBehaviour
 
     private void Awake()
     {
+        invaderCount = 0;
         float x = -2.8f;
         float xChange = 1.1f;
         float y = 2.6f;
@@ -72,13 +73,13 @@ public class InvaderGrid : MonoBehaviour
             }
             return;
         }
-        foreach(GameObject invader in invaders)
+        foreach (GameObject invader in invaders)
         {
-            if(invader == null)
+            if (invader == null)
             {
                 continue;
             }
-            if(invader.transform.position.x >= maxX || invader.transform.position.x <= minX)
+            if (invader.transform.position.x >= maxX || invader.transform.position.x + transform.position.x <= minX)
             {
                 invaderXSpeed *= -1;
                 goDown = true;

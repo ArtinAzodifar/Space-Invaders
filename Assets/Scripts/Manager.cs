@@ -56,4 +56,8 @@ public class Manager
     {
         this.score += score;
     }
+    public void setScore(int i)
+    {
+        score = i;
+    }
 }
