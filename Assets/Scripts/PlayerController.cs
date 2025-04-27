@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
+            //faghat vaghti tiri nabashe mitoone shelik kone
             if (!manager.getIsPlayerLaserActive())
             {
                 Vector3 position = new Vector3(transform.position.x, transform.position.y + 0.1f, 0);
@@ -65,7 +66,7 @@ public class PlayerController : MonoBehaviour
 
     private void Damage()
     {
-        switch (health)
+        switch (health) // object motenazer ba joono miterekoone
         {
             case 3:
                 hearts[2].GetComponent<Heart>().Delete();
@@ -83,14 +84,17 @@ public class PlayerController : MonoBehaviour
 
     private void Explode()
     {
+        //gheire faal kardane movaghat player
         PlayerInput playerInput = GetComponent<PlayerInput>();
         playerInput.enabled = false;
+        //pakhsh animatione destroyPlayer
         Animator animator = GetComponent<Animator>();
         animator.SetTrigger("Explode");
     }
 
     public void Loose()
     {
+        //too akharin keyframe animation destroyPlayer seda zade mishe, vaziat bakht ya edame ro check mikone
         if (health <= 0)
         {
             manager.loose();

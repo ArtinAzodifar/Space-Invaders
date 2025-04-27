@@ -23,6 +23,7 @@ public class InvaderGrid : MonoBehaviour
 
     private void Awake()
     {
+        //grid generate
         invaderCount = 0;
         float x = -2.8f;
         float xChange = 1.1f;
@@ -48,7 +49,7 @@ public class InvaderGrid : MonoBehaviour
 
     private void Update()
     {
-        if (invaderCount <= 0)
+        if (invaderCount <= 0)//sharte bord
         {
             manager.win();
         }
@@ -58,7 +59,7 @@ public class InvaderGrid : MonoBehaviour
 
     private void Move()
     {
-        if (goDown)
+        if (goDown)//residan be gooshe--->0.15 sanie harekat be paeen
         {
             Vector3 moveDown = new Vector3(0, InvaderYSpeed, 0) * Time.deltaTime;
             downTime += Time.deltaTime;
@@ -73,7 +74,7 @@ public class InvaderGrid : MonoBehaviour
             }
             return;
         }
-        foreach (GameObject invader in invaders)
+        foreach (GameObject invader in invaders)//check kardane residan be gooshe
         {
             if (invader == null)
             {
@@ -109,7 +110,7 @@ public class InvaderGrid : MonoBehaviour
             return;
         }
         int invaderIndicator;
-        while (true)
+        while (true)// ye invader ke namorde entekhab mikone ke shelik kone
         {
             invaderIndicator = UnityEngine.Random.Range(0, 30);
             if (invaders[invaderIndicator] != null)

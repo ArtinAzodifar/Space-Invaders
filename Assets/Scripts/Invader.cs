@@ -14,7 +14,7 @@ public class Invader : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(isDead)
+        if(isDead)//jelogiri az kam shodan bishtar az 1vahed az invaderCount
         {
             return;
         }
@@ -34,7 +34,7 @@ public class Invader : MonoBehaviour
                     break;
             }
             Debug.Log(manager.getScore());
-            InvaderGrid.invaderCount--;
+            InvaderGrid.invaderCount--;//mordane object---> kam shodan tedad invader
             Debug.Log(InvaderGrid.invaderCount);
             animator.SetTrigger("Explode");
             Destroy(gameObject, 0.4f);

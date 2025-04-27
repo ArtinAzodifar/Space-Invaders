@@ -11,7 +11,7 @@ public class GameOver : MonoBehaviour
     {
         score.text = "Score: " + manager.getScore();
     }
-    public void StartGame()
+    public void StartGame()//too button rePlay seda zade mishe
     {
         SceneManager.LoadScene("MainScene");
     }
