@@ -35,7 +35,6 @@ public class Invader : MonoBehaviour
             }
             Debug.Log(manager.getScore());
             InvaderGrid.invaderCount--;
-            grid.editSpeed();
             Debug.Log(InvaderGrid.invaderCount);
             animator.SetTrigger("Explode");
             Destroy(gameObject, 0.4f);

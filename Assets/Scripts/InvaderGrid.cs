@@ -9,7 +9,7 @@ public class InvaderGrid : MonoBehaviour
     [SerializeField] private GameObject laser;
     [SerializeField] private int rows = 5;
     [SerializeField] private int cols = 6;
-    [SerializeField] private float invaderXSpeed = 0.6f;
+    [SerializeField] private float invaderXSpeed = 1f;
     [SerializeField] private float InvaderYSpeed = -1.5f;
     [SerializeField] private float maxX = 4.5f;
     [SerializeField] private float minX = -4.5f;
@@ -124,11 +124,5 @@ public class InvaderGrid : MonoBehaviour
     private void setShootTime()
     {
         shootTime = UnityEngine.Random.Range(0f, 5f);
-    }
-
-    public void editSpeed()
-    {
-        invaderXSpeed *= 1 + Math.Abs(1 - ((float)invaderCount / (float)30));
-        invaderXSpeed = Math.Abs(invaderXSpeed) >= 1.2 ? 1.2f : invaderXSpeed;
     }
 }

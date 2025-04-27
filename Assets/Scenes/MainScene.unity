@@ -1231,7 +1231,7 @@ MonoBehaviour:
   laser: {fileID: 6957706758242862667, guid: a938a4e6c3bff934ab6de551acd3d447, type: 3}
   rows: 5
   cols: 6
-  invaderXSpeed: 0.6
+  invaderXSpeed: 1
   InvaderYSpeed: -1.5
   maxX: 4.5
   minX: -4.5
